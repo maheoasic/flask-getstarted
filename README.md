@@ -16,9 +16,8 @@ flask-getstarted
 - Example:
 - --> d4cbc95e405
 - d4cbc95e405967ca53e883d47274128fd907425a825033a94deb75a43d2689a1
-- Run a Container from that Image: 1st few Char's of ImageID on STDOUT are enough
-- $ podman run -p 8888:5000 --> d4cbc95e405
-- Go to browser, type "<IP-of-fedoraVM>:8888" - you should see nice Cat GIF
-- You may need to open port 8888 on your Fedora VirtualBox VM by:
-- # firewall-cmd --add-port=8888/tcp
-- # firewall-cmd --runtime-to-permanent  ## firewall rule persist REBOOTs
+- Run Container from that Image: 1st few Char's of ImageID on STDOUT are enough
+- $ podman run -p 8888:5000 d4cbc95e405
+- Go to browser, type "IP-of-your-fedora-VM:8888" - you should see nice Cat GIF
+- You'll need to open port 8888 on your Fedora VM by:
+- # firewall-cmd --add-port=8888/tcp; firewall-cmd --runtime-to-permanent
