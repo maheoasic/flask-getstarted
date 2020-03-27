@@ -1,14 +1,12 @@
 flask-getstarted
-- Any App consists of:
-- Code + Config, that runs on minimal OS ie: Docker 
-- On top of that you need to install some pkgs as per your App
+- Any App consists of Code + Config, that runs on minimal OS ie: Docker 
+- On you need to install required pkgs as need by your App
 - Your App building consists of:
 - Some Directory (structure) where your code, config, etc resides
 - Some software like pyhon which runs your Code
-- You may have config files that, for example, exposes your Running Code / Service, listens on a Port
-- Your code serves your App on a Port which is "exposed".
-- Ultimately, you run that code endlessly (listening for a Client): > python ./app.py &
-- Steps to run this Docker image on your linux host:
+- You may have config files that exposes your Running Code as Service on a Port
+- Finally, you run that code endlessly (listening for a Client): # python ./app.py &
+- Steps to run this Docker image on your linux host are:
 - $ git clone https://github.com/maheoasic/flask-getstarted.git
 - $ cd flask-getstarted
 - $ podman build .  # builds a local Docker image, outputs image ID Hash :-
@@ -16,6 +14,6 @@ flask-getstarted
 - d4cbc95e405967ca53e883d47274128fd907425a825033a94deb75a43d2689a1
 - Run Container from that Image: 1st few Chars of ImageID are enough
 - $ podman run -p 8888:5000 d4cbc
-- On web browser: IP-of-your-VM:8888 - you should see nice Cat GIF
-- You'll need to open port 8888 on your VM via cmds run as root:
+- On Browser: IP-of-your-VM:8888 - you should see nice Cat GIF
+- You'll need to open port 8888 on firewall of VM:
 - \# firewall-cmd --add-port=8888/tcp; firewall-cmd --runtime-to-permanent
